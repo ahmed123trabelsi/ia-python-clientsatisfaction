@@ -13,7 +13,9 @@ CORS(app, origins='http://localhost:4200', supports_credentials=True)
 app.config['JSON_AS_ASCII'] = False
 app.config['JSON_SORT_KEYS'] = False
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
-
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
 connection_string = "mongodb://localhost:27017/"
 database_name = "library-next-api"
 collection_name = "EmployeeRepport"
