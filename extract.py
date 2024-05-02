@@ -53,15 +53,7 @@ def download_file(filename):
     else:
         return "Fichier non trouvé", 404
 
-# employee_name = input("Nom de l'employé : ")
-# date = input("Date du rapport (AAAA-MM-JJ) : ")
-# comments = input("Commentaires : ")
 
-# if employee_name and date and comments:
-#     file_name = generate_report(employee_name, date, comments)
-#     print(f"Rapport généré avec succès : {file_name}")
-
-#######Extraction donnee from pdf
 def extract_pdf_content(pdf_path):
     with open(pdf_path, 'rb') as f:
         pdf_reader = PyPDF2.PdfReader(f)
@@ -103,59 +95,3 @@ def predict_sentiment(text):
 
     return probabilities
 
-#############################Transforme text########################################
-# Define patterns for extracting date, employee name, and content
-# date_pattern = re.compile(r"Date \: (\d{4}-\d{2}-\d{2})")
-# name_pattern = re.compile(r"Rapport sur l'employé \: (.*)")
-# content_pattern = re.compile(r"Commentaires \:([\s\S]*?)(?=Reconnaissance)")
-# # probabilities = predict_sentiment(extracted_text)
-# positive_sentiment, negative_sentiment = probabilities
-# print("Positive sentiment est :",positive_sentiment)
-# print("Negative sentiment est :",negative_sentiment)
-
-# # Initialize empty String to store extracted data
-# dates = []
-# names = []
-# contents = []
-
-# # Extract and append data for each section
-# for section in extracted_text.split("\n\n"):
-#     date_match = date_pattern.search(section)
-#     name_match = name_pattern.search(section)
-#     content_match = content_pattern.search(section)
-
-#     if date_match:
-#         dates.append(date_match.group(1))
-#     if name_match:
-#         names.append(name_match.group(1))
-#     if content_match:
-#         contents.append(content_match.group(1))
-
-# # Create a dictionnaire from the extracted data
-# data = {
-#     'Date': dates,
-#     'Employee Name': names,
-#     'Content': contents,
-#     'Positive sentiment ':positive_sentiment,
-#     'Negative sentiment':negative_sentiment
-# }
-# print(data)
-
-# ################Load to data##########################
-# try:
-#     # Connect to MongoDB
-#     client = MongoClient(connection_string)
-#     db = client[database_name]
-#     collection = db[collection_name]
-
-#     # Insert the single document (use insert_one instead of insert_many)
-#     result = collection.insert_one(data)
-
-#     print(f"Document inserted successfully with ID: {result.inserted_id}")
-# except pymongo.errors.ConnectionFailure as e:
-#     print("Error connecting to MongoDB:", e)
-# except Exception as e:  # Catch other potential errors
-#     print("An error occurred:", e)
-# finally:
-#     # Always close the connection (optional, recommended for large applications)
-#     client.close()
