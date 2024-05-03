@@ -132,6 +132,6 @@ def get_all_reports():
         return json_util.dumps(all_reports), 200
     except Exception as e:
         logging.exception("Une erreur s'est produite lors de la récupération de tous les rapports : %s", e)
-        return jsonify({'error': 'An error occurred while fetching all reports.'}), 500
+        return jsonify({'error': 'An error occurred while fetching all reportss.'}), 500
 if __name__ == '__main__':
     app.run(debug=True, host='localhost', port=5000)
