@@ -74,7 +74,7 @@ def extract_pdf_content(pdf_path):
 ##############Analyse sentiment ##################################
 
 #Chargement du tokenizer et du modèle Sentibert pré-entraîné
-tokenizer = AutoTokenizer.from_pretrained("tblard/tf-allocine")
+
 
 try:
     tokenizer = AutoTokenizer.from_pretrained("tblard/tf-allocine", use_fast=True)
