@@ -74,12 +74,9 @@ def extract_pdf_content(pdf_path):
 ##############Analyse sentiment ##################################
 
 #Chargement du tokenizer et du modèle Sentibert pré-entraîné
+tokenizer = AutoTokenizer.from_pretrained("tblard/tf-allocine")
+model = AutoModelForSequenceClassification.from_pretrained("tblard/tf-allocine", from_tf=True)
 
-
-try:
-    tokenizer = AutoTokenizer.from_pretrained("tblard/tf-allocine", use_fast=True)
-except Exception as e:
-    print("Failed to load tokenizer:", str(e))
 
 def predict_sentiment(text):
     max_length = 514
